@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>亦梦 · 密码学与网络安全</title>
+    <title>亦梦 · 密码学/逆向/CTF</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- 添加打字机效果的字体 (可选) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -13,38 +15,125 @@
             <ul>
                 <li><a href="index.html" class="active">首页</a></li>
                 <li><a href="about.html">关于</a></li>
-                <li><a href="projects.html">项目</a></li>
-                <li><a href="blog.html">博客</a></li>
+                <li><a href="projects.html">实战</a></li>
+                <li><a href="blog.html">创作</a></li>
                 <li><a href="contact.html">联系</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- Hero 区域 + 动态打字机 -->
         <section class="hero">
-            <h1>你好，我是 <span class="highlight">亦梦</span></h1>
-            <p>桂林电子科技大学 · 密码科学与技术 · 大一</p>
-            <p>探索密码学、网络安全与CTF的世界。</p>
+            <div class="hero-content">
+                <h1 class="glitch" data-text="亦梦">亦梦</h1>
+                <p class="subtitle">桂林电子科技大学 · 密码科学与技术 · 大二</p>
+                <div class="typed-container">
+                    当前聚焦： <span id="typed-text"></span>
+                </div>
+                <div class="hero-badges">
+                    <span class="badge">PQC 后量子</span>
+                    <span class="badge">逆向工程</span>
+                    <span class="badge">CTF 刷题</span>
+                    <span class="badge">计算机底层</span>
+                </div>
+                <div class="cta-buttons">
+                    <a href="projects.html" class="btn primary">实战记录</a>
+                    <a href="blog.html" class="btn secondary">我的创作</a>
+                </div>
+            </div>
         </section>
 
-        <section class="intro">
-            <h2>最近在做什么</h2>
-            <ul>
-                <li>📚 学习密码学基础（RSA、AES）</li>
-                <li>💻 用 Python 写一些小工具</li>
-                <li>📝 在 CSDN 记录学习笔记</li>
-                <li>🌐 搭建这个个人网站</li>
-            </ul>
+        <!-- 最新动态卡片 -->
+        <section class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-shield-halved"></i>
+                <h3>PQC 探索</h3>
+                <p>学习 Kyber/Dilithium，关注 NIST 标准进展</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-microchip"></i>
+                <h3>底层系统</h3>
+                <p>CSAPP + x86汇编，理解计算机如何运行</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-flag"></i>
+                <h3>CTF 刷题</h3>
+                <p>Bugku · CTFshow · 攻防世界 逆向/密码学</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-video"></i>
+                <h3>B站/公众号</h3>
+                <p>把学习过程剪成视频，写文章沉淀</p>
+            </div>
+        </section>
+
+        <!-- 最近刷题记录（可从projects页面同步） -->
+        <section class="recent-work">
+            <h2>🔥 最近在攻防世界/Bugku 解决的题</h2>
+            <div class="work-list">
+                <div class="work-item">
+                    <span class="platform">Bugku</span> —— <span class="challenge">逆向入门 0x01</span> (已完成)
+                </div>
+                <div class="work-item">
+                    <span class="platform">CTFshow</span> —— <span class="challenge">密码学·RSA 基础</span> (进行中)
+                </div>
+                <div class="work-item">
+                    <span class="platform">攻防世界</span> —— <span class="challenge">elrond32 (逆向)</span> (复盘中)
+                </div>
+            </div>
+            <a href="projects.html" class="more-link">查看全部 →</a>
         </section>
     </main>
 
     <footer>
-        <p>© 2025 亦梦 · 桂电密码科学与技术</p>
+        <p>© 2026 亦梦 · 桂电密码科学与技术</p>
         <p>
             <a href="https://github.com/Yi-yun-feng">GitHub</a> | 
             <a href="https://blog.csdn.net/2501_93027236">CSDN</a> | 
-            <a href="mailto:1593285374@qq.com">邮箱</a>
+            <a href="#">B站</a> | 
+            <a href="#">微信公众号</a>
         </p>
     </footer>
+
+    <!-- 打字机效果脚本 -->
+    <script>
+        const typedSpan = document.getElementById('typed-text');
+        const phrases = ['PQC 后量子密码', '逆向工程', '计算机底层', 'CTF 刷题'];
+        let i = 0;
+        let j = 0;
+        let currentPhrase = [];
+        let isDeleting = false;
+        let isEnd = false;
+
+        function loop() {
+            isEnd = false;
+            typedSpan.innerHTML = currentPhrase.join('');
+            if (i < phrases.length) {
+                if (!isDeleting && j <= phrases[i].length) {
+                    currentPhrase.push(phrases[i][j]);
+                    j++;
+                }
+                if (isDeleting && j <= phrases[i].length) {
+                    currentPhrase.pop();
+                    j--;
+                }
+                if (j == phrases[i].length) {
+                    isEnd = true;
+                    isDeleting = true;
+                }
+                if (isDeleting && j === 0) {
+                    currentPhrase = [];
+                    isDeleting = false;
+                    i++;
+                    if (i == phrases.length) {
+                        i = 0;
+                    }
+                }
+            }
+            setTimeout(loop, isEnd ? 2000 : 150);
+        }
+        loop();
+    </script>
 </body>
 </html>
