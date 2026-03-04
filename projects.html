@@ -5,42 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>实战 · 亦梦</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .platform-section { margin-bottom: 2.5rem; }
-        .platform-title { color: #a777e3; border-left: 5px solid #6e8efb; padding-left: 1rem; margin-bottom: 1rem; }
-        .challenge-item { background: rgba(255,255,255,0.05); padding: 0.8rem 1.2rem; border-radius: 10px; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 1rem; }
-        .challenge-name { flex: 1; }
-        .status { font-size: 0.8rem; padding: 0.2rem 0.8rem; border-radius: 20px; background: #1e3a5f; color: #8bbfff; }
-        .status.done { background: #1f5f3a; color: #a0f0a0; }
+        .challenge-item {
+            background: #fafafa;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .challenge-name { flex: 1; font-weight: 500; }
+        .status {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            background: var(--accent-light);
+            color: var(--accent-color);
+        }
+        .status.done { background: #e6f7e6; color: #2e7d32; }
     </style>
 </head>
 <body>
-    <header>...</header>
-    <main>
-        <h1>CTF 刷题记录</h1>
-        <p>以下是我在各大平台解决的题目，持续更新中……</p>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo"><a href="index.html">亦梦</a></div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="about.html">关于</a>
+                <a href="projects.html" class="active">实战</a>
+                <a href="blog.html">创作</a>
+                <a href="contact.html">联系</a>
+            </div>
+        </nav>
 
-        <div class="platform-section">
-            <h2 class="platform-title">🐞 BugkuCTF</h2>
-            <div class="challenge-item"><span class="challenge-name">逆向入门 0x01</span><span class="status done">已完成</span></div>
-            <div class="challenge-item"><span class="challenge-name">简单的RSA</span><span class="status done">已完成</span></div>
-            <div class="challenge-item"><span class="challenge-name">迷路的程序</span><span class="status">进行中</span></div>
-        </div>
+        <main>
+            <h1 class="page-title">CTF 刷题记录</h1>
+            <p>以下是我在各大平台解决的题目，持续更新中……</p>
 
-        <div class="platform-section">
-            <h2 class="platform-title">⚡ CTFshow</h2>
-            <div class="challenge-item"><span class="challenge-name">密码学·easy RSA</span><span class="status done">已完成</span></div>
-            <div class="challenge-item"><span class="challenge-name">逆向·babyre</span><span class="status">进行中</span></div>
-        </div>
+            <div class="platform-section">
+                <h2 class="section-title">🐞 BugkuCTF</h2>
+                <div class="challenge-item"><span class="challenge-name">逆向入门 0x01</span><span class="status done">已完成</span></div>
+                <div class="challenge-item"><span class="challenge-name">简单的RSA</span><span class="status done">已完成</span></div>
+                <div class="challenge-item"><span class="challenge-name">迷路的程序</span><span class="status">进行中</span></div>
+            </div>
 
-        <div class="platform-section">
-            <h2 class="platform-title">🌍 攻防世界</h2>
-            <div class="challenge-item"><span class="challenge-name">elrond32 (逆向)</span><span class="status done">已完成</span></div>
-            <div class="challenge-item"><span class="challenge-name">crash (密码学)</span><span class="status">进行中</span></div>
-        </div>
+            <div class="platform-section">
+                <h2 class="section-title">⚡ CTFshow</h2>
+                <div class="challenge-item"><span class="challenge-name">密码学·easy RSA</span><span class="status done">已完成</span></div>
+                <div class="challenge-item"><span class="challenge-name">逆向·babyre</span><span class="status">进行中</span></div>
+            </div>
 
-        <p style="margin-top:2rem;">解题思路和代码会同步到 <a href="https://github.com/Yi-yun-feng/CTF-Writeups">GitHub Writeups 仓库</a> 和 CSDN 博客。</p>
-    </main>
-    <footer>...</footer>
+            <div class="platform-section">
+                <h2 class="section-title">🌍 攻防世界</h2>
+                <div class="challenge-item"><span class="challenge-name">elrond32 (逆向)</span><span class="status done">已完成</span></div>
+                <div class="challenge-item"><span class="challenge-name">crash (密码学)</span><span class="status">进行中</span></div>
+            </div>
+
+            <p style="margin-top:2rem;">解题思路和代码会同步到 <a href="https://github.com/Yi-yun-feng/CTF-Writeups" target="_blank">GitHub Writeups 仓库</a> 和 CSDN 博客。</p>
+        </main>
+
+        <footer class="footer">
+            <div>© 2026 亦梦 · 桂电密码科学与技术</div>
+            <div class="footer-links">
+                <a href="https://github.com/Yi-yun-feng">GitHub</a>
+                <a href="https://blog.csdn.net/2501_93027236">CSDN</a>
+                <a href="mailto:1593285374@qq.com">Email</a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
