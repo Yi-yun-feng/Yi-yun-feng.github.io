@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系 · 亦梦</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .info-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        .icon {
+            display: inline-block;
+            width: 30px;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">亦梦</div>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="projects.html">项目</a></li>
+                <li><a href="blog.html">博客</a></li>
+                <li><a href="contact.html" class="active">联系</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>联系我</h1>
+        <p>有任何问题或想法，欢迎通过以下方式找到我。</p>
+
+        <div class="contact-info">
+            <div class="info-item">
+                <span class="icon">📧</span> <strong>邮箱：</strong> <a href="mailto:1593285374@qq.com">1593285374@qq.com</a>
+            </div>
+            <div class="info-item">
+                <span class="icon">🐙</span> <strong>GitHub：</strong> <a href="https://github.com/Yi-yun-feng">Yi-yun-feng</a>
+            </div>
+            <div class="info-item">
+                <span class="icon">📝</span> <strong>CSDN博客：</strong> <a href="https://blog.csdn.net/2501_93027236">2501_93027236</a>
+            </div>
+            <div class="info-item">
+                <span class="icon">🏫</span> <strong>学校：</strong> 桂林电子科技大学 · 密码科学与技术
+            </div>
+        </div>
+
+        <h2>或直接留言（演示表单）</h2>
+        <form>
+            <p><label>姓名：<input type="text" name="name" placeholder="你的名字"></label></p>
+            <p><label>邮箱：<input type="email" name="email" placeholder="你的邮箱"></label></p>
+            <p><label>留言：<textarea name="message" rows="4" placeholder="想对我说什么？"></textarea></label></p>
+            <p><button type="submit" style="padding:0.5rem 1.5rem; background:#2563eb; color:white; border:none; border-radius:6px;">发送（演示）</button></p>
+            <p style="font-size:0.9rem; color:#666;">* 此表单仅为前端演示，暂不实际发送邮件</p>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 亦梦 · 桂电密码科学与技术</p>
+        <p><a href="https://github.com/Yi-yun-feng">GitHub</a> | <a href="https://blog.csdn.net/2501_93027236">CSDN</a> | <a href="mailto:1593285374@qq.com">邮箱</a></p>
+    </footer>
+</body>
+</html>
