@@ -4,136 +4,265 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>亦梦 · 密码学/逆向/CTF</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- 添加打字机效果的字体 (可选) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 完全采用极简风格，无额外 CSS 库，只有核心样式 -->
+    <style>
+        /* ---------- 极简重置 ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #1e1e1e;
+            line-height: 1.6;
+            font-size: 16px;
+            padding: 2rem 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ---------- 版式 ---------- */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        p, li {
+            color: #3a3a3a;
+            margin-bottom: 0.75rem;
+        }
+
+        a {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-underline-offset: 0.15rem;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #ccc;
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover {
+            text-decoration-color: #1e1e1e;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eaeaea;
+            margin: 2.5rem 0;
+        }
+
+        /* 导航区 (极简线条) */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0 3rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #6b6b6b;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1e1e1e;
+        }
+
+        /* 头部区域 */
+        .hero {
+            margin-bottom: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #5a5a5a;
+            max-width: 600px;
+        }
+
+        /* 徽章 / 标签 (仿极简胶囊) */
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1rem;
+            margin: 1.5rem 0 2rem 0;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background-color: #f5f5f5;
+            color: #2a2a2a;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 450;
+            margin-bottom: 0;
+            border: 1px solid #eeeeee;
+        }
+
+        /* 时间线样式 (仿 hes huyue) */
+        .timeline {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline li {
+            display: flex;
+            margin-bottom: 1.2rem;
+            color: #3a3a3a;
+        }
+
+        .timeline-date {
+            min-width: 100px;
+            font-weight: 450;
+            color: #6b6b6b;
+            font-size: 0.95rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        /* 页脚 */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eaeaea;
+            font-size: 0.9rem;
+            color: #8a8a8a;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            margin-left: 1.5rem;
+            color: #5a5a5a;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1.5rem; }
+            h1 { font-size: 2.2rem; }
+            .timeline li { flex-direction: column; }
+            .timeline-date { margin-bottom: 0.3rem; }
+            .footer { flex-direction: column; align-items: center; text-align: center; }
+            .footer-links a { margin: 0 0.8rem; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">亦梦</div>
-            <ul>
-                <li><a href="index.html" class="active">首页</a></li>
-                <li><a href="about.html">关于</a></li>
-                <li><a href="projects.html">实战</a></li>
-                <li><a href="blog.html">创作</a></li>
-                <li><a href="contact.html">联系</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- 导航区 - 极简文字链接 -->
+    <div class="nav-links">
+        <a href="index.html" style="color:#1e1e1e;">首页</a>
+        <a href="about.html">关于</a>
+        <a href="projects.html">实战</a>
+        <a href="blog.html">创作</a>
+        <a href="contact.html">联系</a>
+    </div>
 
-    <main>
-        <!-- Hero 区域 + 动态打字机 -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="glitch" data-text="亦梦">亦梦</h1>
-                <p class="subtitle">桂林电子科技大学 · 密码科学与技术 · 大一</p>
-                <div class="typed-container">
-                    当前聚焦： <span id="typed-text"></span>
-                </div>
-                <div class="hero-badges">
-                    <span class="badge">PQC 后量子</span>
-                    <span class="badge">逆向工程</span>
-                    <span class="badge">CTF 刷题</span>
-                    <span class="badge">计算机底层</span>
-                </div>
-                <div class="cta-buttons">
-                    <a href="projects.html" class="btn primary">实战记录</a>
-                    <a href="blog.html" class="btn secondary">我的创作</a>
-                </div>
-            </div>
-        </section>
+    <!-- 头部 / 个人标识 -->
+    <div class="hero">
+        <h1>亦梦</h1>
+        <p>桂林电子科技大学 · 密码科学与技术 · 大一</p>
+        <p style="font-size:1rem; color:#6b6b6b;">探索 PQC、逆向工程、计算机底层与 CTF 的世界。</p>
+    </div>
 
-        <!-- 最新动态卡片 -->
-        <section class="feature-grid">
-            <div class="feature-card">
-                <i class="fas fa-shield-halved"></i>
-                <h3>PQC 探索</h3>
-                <p>学习 Kyber/Dilithium，关注 NIST 标准进展</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-microchip"></i>
-                <h3>底层系统</h3>
-                <p>CSAPP + x86汇编，理解计算机如何运行</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-flag"></i>
-                <h3>CTF 刷题</h3>
-                <p>Bugku · CTFshow · 攻防世界 逆向/密码学</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-video"></i>
-                <h3>B站/公众号</h3>
-                <p>把学习过程剪成视频，写文章沉淀</p>
-            </div>
-        </section>
+    <!-- 徽章区：当前聚焦的关键词 -->
+    <ul class="badge-list">
+        <li>PQC 后量子</li>
+        <li>逆向工程</li>
+        <li>CTF 刷题</li>
+        <li>计算机底层</li>
+        <li>密码学实现</li>
+        <li>B站视频</li>
+    </ul>
 
-        <!-- 最近刷题记录（可从projects页面同步） -->
-        <section class="recent-work">
-            <h2>🔥 最近在攻防世界/Bugku 解决的题</h2>
-            <div class="work-list">
-                <div class="work-item">
-                    <span class="platform">Bugku</span> —— <span class="challenge">逆向入门 0x01</span> (已完成)
-                </div>
-                <div class="work-item">
-                    <span class="platform">CTFshow</span> —— <span class="challenge">密码学·RSA 基础</span> (进行中)
-                </div>
-                <div class="work-item">
-                    <span class="platform">攻防世界</span> —— <span class="challenge">elrond32 (逆向)</span> (复盘中)
-                </div>
-            </div>
-            <a href="projects.html" class="more-link">查看全部 →</a>
-        </section>
-    </main>
+    <!-- 主要内容：分为两列感觉 (用两个区块) -->
+    <h2>📌 当前动态</h2>
+    <ul class="timeline">
+        <li>
+            <span class="timeline-date">2026.03</span>
+            <span class="timeline-content">开始学习 Kyber/Dilithium (PQC)，整理学习笔记发 CSDN。</span>
+        </li>
+        <li>
+            <span class="timeline-date">2026.02</span>
+            <span class="timeline-content">在 Bugku/CTFshow 刷逆向入门题，录制第一期视频素材。</span>
+        </li>
+        <li>
+            <span class="timeline-date">2026.01</span>
+            <span class="timeline-content">用 Python 实现 RSA/AES 算法，不调库，深入理解数学原理。</span>
+        </li>
+        <li>
+            <span class="timeline-date">2025.12</span>
+            <span class="timeline-content">搭建个人网站 yi-meng.top，开始运营 CSDN 博客。</span>
+        </li>
+    </ul>
 
-    <footer>
-        <p>© 2026 亦梦 · 桂电密码科学与技术</p>
-        <p>
-            <a href="https://github.com/Yi-yun-feng">GitHub</a> | 
-            <a href="https://blog.csdn.net/2501_93027236">CSDN</a> | 
-            <a href="#">B站</a> | 
-            <a href="#">微信公众号</a>
-        </p>
-    </footer>
+    <h2>🔭 学习路线</h2>
+    <ul>
+        <li><strong>2026 上半年</strong>：计算机系统基础 (CSAPP Lab) + 密码学算法实现 + PQC 入门</li>
+        <li><strong>2026 下半年</strong>：逆向工程进阶 (Ghidra/IDA) + CTF 密码/逆向专项刷题</li>
+        <li><strong>长期</strong>：将学习过程剪辑成视频发 B 站，运营公众号沉淀文章</li>
+    </ul>
 
-    <!-- 打字机效果脚本 -->
-    <script>
-        const typedSpan = document.getElementById('typed-text');
-        const phrases = ['PQC 后量子密码', '逆向工程', '计算机底层', 'CTF 刷题'];
-        let i = 0;
-        let j = 0;
-        let currentPhrase = [];
-        let isDeleting = false;
-        let isEnd = false;
+    <h2>📚 内容输出</h2>
+    <ul>
+        <li><strong>CSDN 博客</strong>：<a href="https://blog.csdn.net/2501_93027236" target="_blank">2501_93027236</a>（学习笔记/题解）</li>
+        <li><strong>GitHub</strong>：<a href="https://github.com/Yi-yun-feng" target="_blank">Yi-yun-feng</a>（代码/Writeups）</li>
+        <li><strong>B站</strong>：筹备中，预计 4 月发布第一期“逆向入门”</li>
+        <li><strong>公众号</strong>：计划周更“亦梦的密码学笔记”</li>
+    </ul>
 
-        function loop() {
-            isEnd = false;
-            typedSpan.innerHTML = currentPhrase.join('');
-            if (i < phrases.length) {
-                if (!isDeleting && j <= phrases[i].length) {
-                    currentPhrase.push(phrases[i][j]);
-                    j++;
-                }
-                if (isDeleting && j <= phrases[i].length) {
-                    currentPhrase.pop();
-                    j--;
-                }
-                if (j == phrases[i].length) {
-                    isEnd = true;
-                    isDeleting = true;
-                }
-                if (isDeleting && j === 0) {
-                    currentPhrase = [];
-                    isDeleting = false;
-                    i++;
-                    if (i == phrases.length) {
-                        i = 0;
-                    }
-                }
-            }
-            setTimeout(loop, isEnd ? 2000 : 150);
-        }
-        loop();
-    </script>
+    <!-- 分割线 -->
+    <hr>
+
+    <!-- 底部个人签名 + 链接 -->
+    <div class="footer">
+        <div>© 2026 亦梦 · 桂电密码科学与技术</div>
+        <div class="footer-links">
+            <a href="https://github.com/Yi-yun-feng">GitHub</a>
+            <a href="https://blog.csdn.net/2501_93027236">CSDN</a>
+            <a href="mailto:1593285374@qq.com">Email</a>
+        </div>
+    </div>
 </body>
 </html>
