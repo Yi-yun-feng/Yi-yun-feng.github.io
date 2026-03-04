@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目 · 亦梦</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+        }
+        .project-card h3 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+        .status {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">亦梦</div>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="projects.html" class="active">项目</a></li>
+                <li><a href="blog.html">博客</a></li>
+                <li><a href="contact.html">联系</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>我的项目</h1>
+        <p>这里是我学习过程中的一些实践，很多还在进行中。</p>
+
+        <div class="project-card">
+            <h3>个人网站 <span class="status">进行中</span></h3>
+            <p>从零开始用HTML/CSS搭建的个人网站，托管在GitHub Pages，绑定了自定义域名 yi-meng.top。</p>
+            <p><a href="https://github.com/Yi-yun-feng/Yi-yun-feng.github.io">查看源码</a></p>
+        </div>
+
+        <div class="project-card">
+            <h3>Python 练习 <span class="status">学习中</span></h3>
+            <p>用Python实现一些简单的密码算法（凯撒密码、仿射密码等），练习基础语法。</p>
+        </div>
+
+        <div class="project-card">
+            <h3>CTF 刷题记录 <span class="status">计划中</span></h3>
+            <p>准备在CTF平台上（如BUUCTF）刷题，记录解题思路，整理成笔记分享。</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 亦梦 · 桂电密码科学与技术</p>
+        <p><a href="https://github.com/Yi-yun-feng">GitHub</a> | <a href="https://blog.csdn.net/2501_93027236">CSDN</a> | <a href="mailto:1593285374@qq.com">邮箱</a></p>
+    </footer>
+</body>
+</html>
