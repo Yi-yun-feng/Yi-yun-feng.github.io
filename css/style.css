@@ -302,3 +302,6 @@ footer a {
 footer a:hover {
     color: #a777e3;
 }
+body {
+  background: linear-gradient(145deg, #fcfcfc 0%, #f5f5f5 100%);
+}
