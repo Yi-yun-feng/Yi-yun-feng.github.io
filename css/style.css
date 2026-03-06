@@ -6,17 +6,13 @@
 }
 
 :root {
-    --bg-color: #ffffff;
-    --text-primary: #1e1e1e;
-    --text-secondary: #5a5a5a;
-    --text-light: #8a8a8a;
-    --border-color: #eaeaea;
-    --accent-color: #2563eb;      /* 科技蓝，作为点缀 */
-    --accent-light: #dbeafe;
-    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-mono: 'SF Mono', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
-    --max-width: 900px;
-    --spacing: 2rem;
+    --bg-color: #fef9f4;        /* 暖白基底 */
+    --text-primary: #3a3a5a;     /* 深蓝紫，柔和 */
+    --text-secondary: #6b5b7e;   /* 紫灰 */
+    --border-color: #f0d9e8;     /* 粉紫边框 */
+    --accent-color: #ff9fae;     /* 樱花粉 */
+    --accent-light: #ffe4e9;     /* 浅粉背景 */
+    --card-bg: rgba(255, 255, 255, 0.8); /* 半透明白 */
 }
 
 body {
@@ -29,6 +25,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 30% 40%, rgba(255, 200, 220, 0.2) 0%, transparent 20%),
+        radial-gradient(circle at 70% 80%, rgba(200, 220, 255, 0.15) 0%, transparent 25%),
+        url('data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="1.5" fill="%23ff9fae" opacity="0.2"/></svg>');
+    background-repeat: repeat;
 }
 
 .container {
