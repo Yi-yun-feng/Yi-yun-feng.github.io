@@ -6,12 +6,12 @@
 }
 
 :root {
-    --bg-color: #fef9f4;        /* 暖白基底 */
-    --text-primary: #3a3a5a;     /* 深蓝紫，柔和 */
-    --text-secondary: #6b5b7e;   /* 紫灰 */
-    --border-color: #f0d9e8;     /* 粉紫边框 */
-    --accent-color: #ff9fae;     /* 樱花粉 */
-    --accent-light: #ffe4e9;     /* 浅粉背景 */
+    --bg-color: #f0f8ff;           /* 极浅天蓝背景 */
+    --text-primary: #2c3e50;        /* 深蓝灰，清晰不刺眼 */
+    --text-secondary: #5d7b9f;      /* 中等蓝色 */
+    --border-color: #c9e0f0;        /* 浅蓝边框 */
+    --accent-color: #5aa9e6;        /* 明亮天蓝（点缀） */
+    --accent-light: #c8e2ff;        /* 极浅蓝背景 */
     --card-bg: rgba(255, 255, 255, 0.8); /* 半透明白 */
 }
 
