@@ -612,3 +612,62 @@ a, button, .card, .nav-links a {
     color: var(--accent-color);
     margin-top: 0.3rem;
 }
+/* 状态卡片组（三卡片） */
+.status-cards {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.status-card {
+    flex: 1 1 200px;
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(90, 169, 230, 0.1);
+    transition: transform 0.2s, border-color 0.2s;
+    min-width: 200px;
+}
+
+.status-card:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-color);
+}
+
+.status-card i {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    animation: rotate-slow 6s infinite linear;
+}
+
+@keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.status-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.status-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0.1rem 0;
+    line-height: 1.4;
+}
+
+.status-note {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin-top: 0.3rem;
+    font-style: italic;
+}
