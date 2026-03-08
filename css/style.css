@@ -543,20 +543,6 @@ button:hover {
 
 /* ====== 新增二次元装饰 ====== */
 
-/* 浮动星星 */
-.floating-star {
-    position: fixed;
-    font-size: 2rem;
-    color: var(--accent-light);
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: 0;
-    animation: float 6s infinite ease-in-out;
-}
-@keyframes float {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(10px, -20px); }
-}
 
 /* 小猫图标 */
 .cat-icon {
