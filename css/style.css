@@ -14,7 +14,7 @@
     --accent-color: #5aa9e6;
     --accent-light: #c8e2ff;
     --card-bg: rgba(255, 255, 255, 0.8);
-    --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Quicksand', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* 已更换为二次元圆润字体 */
 }
 
 body {
@@ -33,6 +33,8 @@ body {
         radial-gradient(circle at 70% 80%, rgba(90, 169, 230, 0.08) 0%, transparent 25%),
         url('data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="1.5" fill="%235aa9e6" opacity="0.2"/></svg>');
     background-repeat: repeat;
+    /* 鼠标样式改为半透明蓝色小圆点 */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%235aa9e6" opacity="0.5"/></svg>') 12 12, auto;
 }
 
 .container {
@@ -130,7 +132,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 2.8rem;  /* 调小后的尺寸，原来可能是 4rem */
+    font-size: 2.8rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
@@ -185,6 +187,9 @@ body {
     padding: 1.8rem 1.2rem;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    /* 增加微内阴影和柔和外阴影，让卡片更立体 */
+    box-shadow: 0 4px 20px rgba(90, 169, 230, 0.1),
+                inset 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 .card:hover {
@@ -394,7 +399,8 @@ button:hover {
         justify-content: center;
     }
 }
-/* 二维码样式 */
+
+/* 二维码样式（保持原样） */
 .qrcode-section {
     margin: 3rem 0;
     padding: 2rem;
@@ -439,16 +445,14 @@ button:hover {
     font-size: 0.8rem;
     color: var(--text-light);
 }
-/* ====== 新增：悬浮二维码样式（用于创作页和联系页） ====== */
 
-/* 通用悬浮容器 */
+/* ====== 新增：悬浮二维码样式（用于创作页和联系页） ====== */
 .hover-qrcode-container {
     display: inline-block;
     position: relative;
     cursor: pointer;
 }
 
-/* 悬浮触发元素（平台名称或图标+文字） */
 .hover-trigger {
     display: inline-flex;
     align-items: center;
@@ -471,10 +475,9 @@ button:hover {
     color: white;
 }
 
-/* 二维码浮层（通用） */
 .qrcode-popup {
     position: absolute;
-    bottom: 150%; /* 显示在上方 */
+    bottom: 150%;
     left: 50%;
     transform: translateX(-50%);
     background: white;
@@ -501,7 +504,6 @@ button:hover {
     margin: 0;
 }
 
-/* 小箭头 */
 .qrcode-popup::after {
     content: '';
     position: absolute;
@@ -513,13 +515,11 @@ button:hover {
     border-color: white transparent transparent transparent;
 }
 
-/* 悬停显示 */
 .hover-qrcode-container:hover .qrcode-popup {
     visibility: visible;
     opacity: 1;
 }
 
-/* 联系页的悬浮网格布局（替代原来的静态网格） */
 .contact-hover-grid {
     display: flex;
     gap: 2rem;
@@ -528,7 +528,6 @@ button:hover {
     margin: 2rem 0;
 }
 
-/* 创作页卡片内嵌入悬浮元素（保持卡片风格） */
 .card .hover-qrcode-container {
     margin-top: 0.8rem;
 }
@@ -540,4 +539,43 @@ button:hover {
 .card .hover-trigger:hover {
     background: transparent;
     color: var(--accent-color-dark);
+}
+
+/* ====== 新增二次元装饰 ====== */
+
+/* 浮动星星 */
+.floating-star {
+    position: fixed;
+    font-size: 2rem;
+    color: var(--accent-light);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+    animation: float 6s infinite ease-in-out;
+}
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -20px); }
+}
+
+/* 小猫图标 */
+.cat-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: var(--accent-color);
+    opacity: 0.3;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 100;
+    pointer-events: none; /* 让鼠标可以穿透点击下层内容，如果希望可以互动就删掉这一行 */
+}
+.cat-icon:hover {
+    opacity: 0.8;
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* 链接和按钮的鼠标样式（为了统一，也改为小圆点） */
+a, button, .card, .nav-links a {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="%235aa9e6" opacity="0.7"/></svg>') 12 12, pointer;
 }
