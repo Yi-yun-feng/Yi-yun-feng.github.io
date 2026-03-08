@@ -24,6 +24,7 @@
             <h1 class="page-title">联系我</h1>
             <p>有任何问题或想法，欢迎通过以下方式找到我。</p>
 
+            <!-- 原有联系方式列表保持不变 -->
             <ul class="contact-list">
                 <li>
                     <span class="contact-icon"><i class="fas fa-envelope"></i></span>
@@ -46,24 +47,35 @@
                     <span class="contact-detail"><strong>B站：</strong> <a href="https://space.bilibili.com/3546377254603168" target="_blank">深海最后的回响</a></span>
                 </li>
             </ul>
-            <!-- 扫码关注区域 -->
-                <section class="qrcode-section">
-                    <h2 class="section-title">📱 扫码关注</h2>
-                  <div class="qrcode-grid">
-                        <div class="qrcode-item">
-                            <img src="images/wechat_qrcode_new.jpg" alt="微信公众号二维码" class="qrcode-img">
-                            <p>微信公众号</p>
-                            <p class="qrcode-note">（微信扫码关注）</p>
-                           </div>
-                           <div class="qrcode-item">
-                       <img src="images/wechat_qrcode_new2.jpg" alt="知乎二维码" class="qrcode-img">
-                       <p>知乎</p>
-                       <p class="qrcode-note">（知乎扫码关注）</p>
-                   </div>
-               </div>
+
+            <!-- 新增：悬浮二维码区域（替换原来的静态二维码） -->
+            <section class="qrcode-section" style="border: none; background: none; padding: 1rem 0;">
+                <h2 class="section-title">📱 扫码关注</h2>
+                <div class="contact-hover-grid">
+                    <!-- 微信公众号 -->
+                    <div class="hover-qrcode-container">
+                        <span class="hover-trigger">
+                            <i class="fab fa-weixin"></i> 微信公众号
+                        </span>
+                        <div class="qrcode-popup">
+                            <img src="images/wechat_qrcode_new.jpg" alt="公众号二维码">
+                            <p>微信扫码关注</p>
+                        </div>
+                    </div>
+                    <!-- 知乎 -->
+                    <div class="hover-qrcode-container">
+                        <span class="hover-trigger">
+                            <i class="fab fa-zhihu"></i> 知乎
+                        </span>
+                        <div class="qrcode-popup">
+                            <img src="images/wechat_qrcode_new2.jpg" alt="知乎二维码">
+                            <p>知乎扫码关注</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-
+            <!-- 留言表单保持不变 -->
             <h2 class="section-title">或直接留言</h2>
             <form onsubmit="alert('感谢留言！此表单为演示，暂不实际发送。'); return false;">
                 <div class="form-group">
