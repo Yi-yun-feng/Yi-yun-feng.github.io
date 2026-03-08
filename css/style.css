@@ -439,3 +439,105 @@ button:hover {
     font-size: 0.8rem;
     color: var(--text-light);
 }
+/* ====== 新增：悬浮二维码样式（用于创作页和联系页） ====== */
+
+/* 通用悬浮容器 */
+.hover-qrcode-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+/* 悬浮触发元素（平台名称或图标+文字） */
+.hover-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1.2rem;
+    background: var(--accent-light);
+    color: var(--accent-color);
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.hover-trigger i {
+    font-size: 1.2rem;
+}
+.hover-trigger:hover {
+    background: var(--accent-color);
+    color: white;
+}
+.hover-trigger:hover i {
+    color: white;
+}
+
+/* 二维码浮层（通用） */
+.qrcode-popup {
+    position: absolute;
+    bottom: 150%; /* 显示在上方 */
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    z-index: 100;
+    width: 160px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+.qrcode-popup img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+.qrcode-popup p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* 小箭头 */
+.qrcode-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+/* 悬停显示 */
+.hover-qrcode-container:hover .qrcode-popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 联系页的悬浮网格布局（替代原来的静态网格） */
+.contact-hover-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+/* 创作页卡片内嵌入悬浮元素（保持卡片风格） */
+.card .hover-qrcode-container {
+    margin-top: 0.8rem;
+}
+.card .hover-trigger {
+    background: transparent;
+    padding: 0;
+    color: var(--accent-color);
+}
+.card .hover-trigger:hover {
+    background: transparent;
+    color: var(--accent-color-dark);
+}
