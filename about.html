@@ -8,18 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <div class="logo"><a href="index.html">亦梦</a></div>
-            <div class="nav-links">
-                <a href="index.html">首页</a>
-                <a href="about.html" class="active">关于</a>
-                <a href="projects.html">实战</a>
-                <a href="blog.html">创作</a>
-                <a href="contact.html">联系</a>
-            </div>
-        </nav>
+    <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="menu-panel" id="menuPanel">
+        <div class="menu-close" id="menuClose"><i class="fas fa-times"></i></div>
+        <ul class="menu-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html" class="active">关于</a></li>
+            <li><a href="blog.html">创作</a></li>
+        </ul>
+        <div class="menu-footer">
+            <a href="https://github.com/Yi-yun-feng"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://blog.csdn.net/2501_93027236"><i class="fas fa-blog"></i> CSDN</a>
+            <a href="mailto:1593285374@qq.com"><i class="fas fa-envelope"></i> 邮箱</a>
+        </div>
+    </div>
 
+    <div class="container">
         <main>
             <h1 class="page-title">关于我</h1>
             <section>
@@ -39,16 +45,10 @@
             </section>
 
             <section>
-                <h2 class="section-title">📅 学习计划</h2>
-                <p><strong>2026上半年</strong>：计算机系统基础 (CSAPP lab)，实现 RSA/AES 算法，开始接触 PQC 论文。</p>
-                <p><strong>2026下半年</strong>：主攻逆向工程，在 Bugku/CTFshow/攻防世界刷题，争取参加线下赛。</p>
-            </section>
-
-            <section>
-                <h2 class="section-title">📺 内容输出</h2>
-                <p>B站：正在筹备“从零开始学逆向”系列，预计4月上线。</p>
-                <p>公众号：计划周更“亦梦的密码学笔记”。</p>
-                <p>CSDN/GitHub：日常更新学习笔记和代码。</p>
+                <h2 class="section-title">📅 长期路线</h2>
+                <p><strong>2026 上半年</strong>：计算机系统基础 + 密码学算法实现 + PQC 入门</p>
+                <p><strong>2026 下半年</strong>：逆向工程进阶 + CTF 密码/逆向专项刷题</p>
+                <p><strong>长期</strong>：将学习过程剪辑成视频发 B 站，运营公众号沉淀文章</p>
             </section>
         </main>
 
@@ -61,5 +61,21 @@
             </div>
         </footer>
     </div>
+
+    <div class="mascot"><i class="fas fa-star"></i></div>
+    <div class="cat-icon"><i class="fas fa-cat"></i></div>
+
+    <script>
+        const toggle = document.getElementById('menuToggle');
+        const panel = document.getElementById('menuPanel');
+        const closeBtn = document.getElementById('menuClose');
+        function openMenu() { panel.classList.add('active'); }
+        function closeMenu() { panel.classList.remove('active'); }
+        toggle.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        document.addEventListener('click', function(e) {
+            if (!panel.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+        });
+    </script>
 </body>
 </html>
