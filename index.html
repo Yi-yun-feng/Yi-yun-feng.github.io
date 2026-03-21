@@ -11,26 +11,23 @@
 </head>
 <body>
     <div class="container">
-        <!-- 导航栏 -->
+        <!-- 导航栏（精简为三板块） -->
         <nav class="navbar">
             <div class="logo"><a href="index.html">亦梦</a></div>
             <div class="nav-links">
                 <a href="index.html" class="active"><i class="fas fa-star"></i> 首页</a>
                 <a href="about.html"><i class="fas fa-cat"></i> 关于</a>
-                <a href="projects.html"><i class="fas fa-gamepad"></i> 实战</a>
                 <a href="blog.html"><i class="fas fa-pencil-alt"></i> 创作</a>
-                <a href="contact.html"><i class="fas fa-envelope"></i> 联系</a>
             </div>
         </nav>
 
-        <!-- 主内容 -->
+        <!-- 主内容（保持不变，你之前的内容都在） -->
         <main>
             <section class="hero">
                 <h1>亦梦</h1>
                 <div class="subtitle">桂林电子科技大学 · 密码科学与技术 · 大一</div>
                 <div class="focus">探索后量子密码、逆向工程、计算机底层与CTF的世界。</div>
                 
-                <!-- 聚焦徽章 -->
                 <ul class="badge-list">
                     <li>PQC 后量子</li>
                     <li>逆向工程</li>
@@ -40,7 +37,6 @@
                     <li>B站视频</li>
                 </ul>
 
-                <!-- 四个方向卡片 -->
                 <div class="card-grid">
                     <div class="card">
                         <i class="fas fa-shield-halved"></i>
@@ -64,7 +60,6 @@
                     </div>
                 </div>
 
-                <!-- 状态卡片组（三卡片） -->
                 <div class="status-cards">
                     <div class="status-card">
                         <i class="fas fa-music"></i>
@@ -94,28 +89,14 @@
                     </div>
                 </div>
 
-                <!-- 最近动态时间线 -->
                 <h2 class="section-title">📌 当前动态</h2>
                 <ul class="timeline">
-                    <li>
-                        <span class="timeline-date">2026.03</span>
-                        <span class="timeline-content">开始学习 Kyber/Dilithium (PQC)，整理学习笔记发 CSDN。</span>
-                    </li>
-                    <li>
-                        <span class="timeline-date">2026.02</span>
-                        <span class="timeline-content">在 Bugku/CTFshow 刷逆向入门题，录制第一期视频素材。</span>
-                    </li>
-                    <li>
-                        <span class="timeline-date">2026.01</span>
-                        <span class="timeline-content">用 Python 实现 RSA/AES 算法，不调库，深入理解数学原理。</span>
-                    </li>
-                    <li>
-                        <span class="timeline-date">2025.12</span>
-                        <span class="timeline-content">搭建个人网站 yi-meng.top，开始运营 CSDN 博客。</span>
-                    </li>
+                    <li><span class="timeline-date">2026.03</span><span class="timeline-content">开始学习 Kyber/Dilithium (PQC)，整理学习笔记发 CSDN。</span></li>
+                    <li><span class="timeline-date">2026.02</span><span class="timeline-content">在 Bugku/CTFshow 刷逆向入门题，录制第一期视频素材。</span></li>
+                    <li><span class="timeline-date">2026.01</span><span class="timeline-content">用 Python 实现 RSA/AES 算法，不调库，深入理解数学原理。</span></li>
+                    <li><span class="timeline-date">2025.12</span><span class="timeline-content">搭建个人网站 yi-meng.top，开始运营 CSDN 博客。</span></li>
                 </ul>
 
-                <!-- 学习路线概要 -->
                 <h2 class="section-title">🔭 学习路线</h2>
                 <ul style="margin-bottom: 2rem;">
                     <li><strong>2026 上半年</strong>：计算机系统基础 (CSAPP Lab) + 密码学算法实现 + PQC 入门</li>
@@ -125,7 +106,6 @@
             </section>
         </main>
 
-        <!-- 页脚 -->
         <footer class="footer">
             <div>© 2026 亦梦 · 桂电密码科学与技术</div>
             <div class="footer-links">
@@ -136,22 +116,9 @@
         </footer>
     </div>
 
-    <!-- 二次元装饰：看板娘（爱心图标换成星星，适应蓝白色系） -->
-    <div class="mascot">
-        <i class="fas fa-star"></i>  <!-- 星星图标，蓝白风格 -->
-    </div>
-
-    <!-- 小猫图标（角落） -->
-    <div class="cat-icon">
-        <i class="fas fa-cat"></i>
-    </div>
-
-    <!-- 漂浮的樱花花瓣（可换成蓝色小星星） -->
-    <div class="sakura"></div>
-    <div class="sakura" style="left: 20%; animation-delay: 0s;"></div>
-    <div class="sakura" style="left: 40%; animation-delay: 2s;"></div>
-    <div class="sakura" style="left: 60%; animation-delay: 4s;"></div>
-    <div class="sakura" style="left: 80%; animation-delay: 6s;"></div>
+    <!-- 看板娘（星星图标）和小猫保留 -->
+    <div class="mascot"><i class="fas fa-star"></i></div>
+    <div class="cat-icon"><i class="fas fa-cat"></i></div>
 
     <script src="js/main.js"></script>
 </body>
