@@ -1,4 +1,4 @@
-/* ====== 蓝白色系二次元风格（无粉色） ====== */
+/* ====== 蓝白色系二次元风格（无粉色、无漂浮星星） ====== */
 
 * {
     margin: 0;
@@ -7,11 +7,11 @@
 }
 
 :root {
-    --bg-color: #f0f8ff;          /* 极浅天蓝背景 */
-    --text-primary: #2c3e50;       /* 深蓝灰 */
+    --bg-color: #f0f8ff;
+    --text-primary: #2c3e50;
     --text-secondary: #5d7b9f;
     --border-color: #c9e0f0;
-    --accent-color: #5aa9e6;       /* 明亮天蓝 */
+    --accent-color: #5aa9e6;
     --accent-light: #c8e2ff;
     --card-bg: rgba(255, 255, 255, 0.85);
     --font-sans: 'M PLUS Rounded 1c', 'Quicksand', 'Poppins', sans-serif;
@@ -33,7 +33,6 @@ body {
         radial-gradient(circle at 70% 80%, rgba(90, 169, 230, 0.08) 0%, transparent 25%),
         url('data:image/svg+xml;utf8,<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="1.5" fill="%235aa9e6" opacity="0.2"/></svg>');
     background-repeat: repeat;
-    /* 鼠标改为小星星 */
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 19,22 12,17 5,22 8,14 2,9 9,9 12,2" fill="%235aa9e6" opacity="0.7"/></svg>') 12 12, auto;
 }
 
@@ -444,29 +443,6 @@ button:hover {
     transform: rotate(5deg) scale(1.1);
 }
 
-/* 漂浮小星星（替代樱花） */
-.sakura {
-    position: fixed;
-    top: -20px;
-    width: 8px;
-    height: 8px;
-    background: transparent;
-    box-shadow: 0 0 0 2px var(--accent-color), 0 0 0 4px rgba(90,169,230,0.3);
-    border-radius: 0;
-    transform: rotate(45deg);
-    opacity: 0.6;
-    pointer-events: none;
-    z-index: 99;
-    animation: fall 8s linear infinite;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
 /* 响应式 */
 @media (max-width: 600px) {
     .navbar {
@@ -495,9 +471,5 @@ button:hover {
     }
     .footer-links {
         justify-content: center;
-    }
-    .sakura {
-        width: 6px;
-        height: 6px;
     }
 }
