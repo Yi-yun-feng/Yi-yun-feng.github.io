@@ -106,13 +106,6 @@
                     <li><span class="timeline-date">2026.01</span><span class="timeline-content">用 Python 实现 RSA/AES 算法，不调库，深入理解数学原理。</span></li>
                     <li><span class="timeline-date">2025.12</span><span class="timeline-content">搭建个人网站 yi-meng.top，开始运营 CSDN 博客。</span></li>
                 </ul>
-
-                <h2 class="section-title">🔭 学习路线</h2>
-                <ul style="margin-bottom: 2rem;">
-                    <li><strong>2026 上半年</strong>：计算机系统基础 (CSAPP Lab) + 密码学算法实现 + PQC 入门</li>
-                    <li><strong>2026 下半年</strong>：逆向工程进阶 (Ghidra/IDA) + CTF 密码/逆向专项刷题</li>
-                    <li><strong>长期</strong>：将学习过程剪辑成视频发 B 站，运营公众号沉淀文章</li>
-                </ul>
             </section>
         </main>
 
@@ -133,10 +126,8 @@
         const toggle = document.getElementById('menuToggle');
         const panel = document.getElementById('menuPanel');
         const closeBtn = document.getElementById('menuClose');
-
         function openMenu() { panel.classList.add('active'); }
         function closeMenu() { panel.classList.remove('active'); }
-
         toggle.addEventListener('click', openMenu);
         closeBtn.addEventListener('click', closeMenu);
         document.addEventListener('click', function(e) {
