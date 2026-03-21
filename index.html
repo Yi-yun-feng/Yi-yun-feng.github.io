@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>亦梦 · 密码学/逆向/CTF</title>
-    <!-- 引入 Quicksand 字体（二次元圆润感） -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 二次元圆润字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -26,7 +26,7 @@
         <!-- 主内容 -->
         <main>
             <section class="hero">
-                <h1 style="font-size: 2.5rem;">亦梦</h1>
+                <h1>亦梦</h1>
                 <div class="subtitle">桂林电子科技大学 · 密码科学与技术 · 大一</div>
                 <div class="focus">探索后量子密码、逆向工程、计算机底层与CTF的世界。</div>
                 
@@ -63,48 +63,36 @@
                         <p>Python/C 实现 RSA/AES，深入数学原理</p>
                     </div>
                 </div>
-                <!-- 四个方向卡片（已存在）... -->
-</div>
 
-<!-- 四个方向卡片（已存在）... -->
-</div>
-
-<!-- 新增：三卡片区域 -->
-<div class="status-cards">
-    <!-- 最近在听 -->
-    <div class="status-card">
-        <i class="fas fa-music"></i>
-        <div class="status-info">
-            <h3>🎵 最近在听</h3>
-            <p>《远航星的告别》</p>
-            <p class="status-note">—— 单曲循环中</p>
-        </div>
-    </div>
-
-    <!-- 最近在学 -->
-    <div class="status-card">
-        <i class="fas fa-book-open"></i>
-        <div class="status-info">
-            <h3>📚 最近在学</h3>
-            <p>泛函分析 · 实分析 · 抽象代数</p>
-            <p>PQC 算法 · 逆向工程 · 计算机底层</p>
-            <p class="status-note">每天都是数学日</p>
-        </div>
-    </div>
-
-    <!-- 最近在干 -->
-    <div class="status-card">
-        <i class="fas fa-pencil-alt"></i>
-        <div class="status-info">
-            <h3>✍️ 最近在干</h3>
-            <p>写知乎文章 · 运营公众号</p>
-            <p>整理 CSDN 笔记 · 筹备 B 站视频</p>
-            <p class="status-note">把思考变成输出</p>
-        </div>
-    </div>
-</div>
-
-<!-- 当前动态（已存在）... -->
+                <!-- 状态卡片组（三卡片） -->
+                <div class="status-cards">
+                    <div class="status-card">
+                        <i class="fas fa-music"></i>
+                        <div class="status-info">
+                            <h3>🎵 最近在听</h3>
+                            <p>《远航星的告别》</p>
+                            <p class="status-note">—— 单曲循环中</p>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <i class="fas fa-book-open"></i>
+                        <div class="status-info">
+                            <h3>📚 最近在学</h3>
+                            <p>泛函分析 · 实分析 · 抽象代数</p>
+                            <p>PQC 算法 · 逆向工程 · 计算机底层</p>
+                            <p class="status-note">每天都是数学日</p>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <i class="fas fa-pencil-alt"></i>
+                        <div class="status-info">
+                            <h3>✍️ 最近在干</h3>
+                            <p>写知乎文章 · 运营公众号</p>
+                            <p>整理 CSDN 笔记 · 筹备 B 站视频</p>
+                            <p class="status-note">把思考变成输出</p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- 最近动态时间线 -->
                 <h2 class="section-title">📌 当前动态</h2>
@@ -148,10 +136,23 @@
         </footer>
     </div>
 
+    <!-- 二次元装饰：看板娘（会浮动） -->
+    <div class="mascot">
+        <i class="fas fa-heart"></i>  <!-- 爱心图标，你可以换成图片 -->
+    </div>
 
     <!-- 小猫图标（角落） -->
     <div class="cat-icon">
         <i class="fas fa-cat"></i>
     </div>
+
+    <!-- 漂浮的樱花花瓣（CSS 动画） -->
+    <div class="sakura"></div>
+    <div class="sakura" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="sakura" style="left: 40%; animation-delay: 2s;"></div>
+    <div class="sakura" style="left: 60%; animation-delay: 4s;"></div>
+    <div class="sakura" style="left: 80%; animation-delay: 6s;"></div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
